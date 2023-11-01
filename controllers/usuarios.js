@@ -22,13 +22,12 @@ const UsuariosGet = (req = request, res = response) => {
 
 const UsuariosPost = async (req, res = response) => {
 
-    const body = req.body;
-    const usuario = new Usuario(body);
-    await usuario.save();
+    const {nombre,edad} = req.body
 
     res.json({
         msg: 'post API - Controlador',
-        usuario
+        nombre,
+        edad
     });
 
 
